@@ -13,10 +13,8 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    console.log(postData)
     // Serialize data so the template can read it
     const posts = postData.map((project) => project.get({ plain: true }));
-    console.log(posts)
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       posts, 
@@ -38,7 +36,7 @@ router.get('/post/:id', async (req, res) => {
       ],
     });
 
-    const post = projectData.get({ plain: true });
+    const post = postData.get({ plain: true });
 
     res.render('post', {
       ...post,
