@@ -1,17 +1,14 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "needed_funding": 5000
+    "title": "Teamwork in coding",
+    "content": "Effective communication and collaboration within a development team are crucial. Poor team dynamics, miscommunication, or disagreements can lead to delays and hinder progress. On the bright side, the coding community is vast and global. You can collaborate with like-minded individuals from around the world, contributing to open-source projects and sharing knowledge. Developers have the power to bring their innovative ideas to life through coding. You can create new applications, tools, and systems that have a real impact on people's lives."
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
+    "title": "Staying healthy while working as a coder",
+    "content": " Coding work can be solitary, and developers may spend long hours sitting at a desk, leading to feelings of isolation and a sedentary lifestyle that can negatively impact physical and mental health. At the same time, many coding jobs offer the option to work remotely, providing a better work-life balance and allowing you to work from different locations. Additionally, coding challenges your intellect and keeps your mind engaged. The constant need to learn and adapt keeps the work exciting and prevents stagnation."
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "title": "Innovation and creativity",
+    "content": "Coding involves solving complex problems and creating solutions from scratch. This process fosters critical thinking, creativity, and a sense of accomplishment when overcoming challenges. The tech field is always evolving, which means there are endless opportunities to learn new languages, frameworks, and technologies. This continuous learning keeps the work engaging and helps you stay relevant. Developers play a crucial role in shaping the future through technological innovations. Your work could contribute to groundbreaking advancements in fields like healthcare, education, sustainability, and more."
   }
 ]
