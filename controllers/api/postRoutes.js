@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-
+// TODO: update post route
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
@@ -12,6 +12,21 @@ router.post('/', withAuth, async (req, res) => {
     res.status(200).json(newPost);
   } catch (err) {
     res.status(400).json(err);
+  }
+});
+
+// New comment for a specific post
+router.post('/:id', withAuth, async (req, res) => {
+  try {
+      const newComment = await Comment.create({
+      ...req.body,
+      user_id: req.session.user_id,
+      post_id: req.params.id
+  });
+
+      res.status(200).json(newComment);
+  } catch (err) {
+      res.status(400).json(err);
   }
 });
 
