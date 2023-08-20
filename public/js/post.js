@@ -22,4 +22,31 @@ const commentHandler = async (event) => {
     }
 };
 
+const deleteHandler = async (event) => {
+    event.preventDefault();
+
+    const id = document.getElementById('content').getAttribute('data-id');
+    if(id){
+        const response = await fetch(`/api/posts/${id}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            document.location.replace('/dashboard');
+        } else {
+            alert('Failed to delete post');
+        };
+    }
+};
+
+const editHandler = async (event) => {
+    const id = document.getElementById('content').getAttribute('data-id');
+    if(id){
+        document.location.replace(`/post/edit/${id}`);
+    }
+};
+
 document.getElementById('comment').addEventListener('click', commentHandler);
+document.getElementById('edit').addEventListener('click', editHandler);
+document.getElementById('delete').addEventListener('click', deleteHandler);
+

@@ -1,0 +1,17 @@
+<h2>Edit your post below:</h2>
+<form class="form">
+    <div class = 'row'>
+        <div class = 'col-12 form-group'>
+            <label>Title:</label>
+            <textarea class = "form-input" id="post-name">{{title}}</textarea>
+        </div>
+        <div class = 'col-12 form-group'>
+            <label>Post content:</label>
+            <textarea class = "form-input" id="post-content" data-id = {{id}}>{{content}}</textarea>
+        </div>
+        <p>Created by {{user.name}} on {{format_date date_created}}</p>
+    </div>
+    <button class="btn btn-primary" id = "save">Save changes</button>
+</form>
+
+<script src="/js/update.js"></script>

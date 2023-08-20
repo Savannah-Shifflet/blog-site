@@ -46,13 +46,45 @@ router.get('/post/:id', withAuth, async (req, res) => {
 
       const comments = commentData.map((comment) => comment.get({plain: true }))
       const post = postData.get({ plain: true });
-
-      res.render('post', {
-        ...post,
-        comments,
-        logged_in: req.session.logged_in
-      });
+      let postUser = false;
+      if(post.user_id === req.session.user_id){
+        postUser = true;
+      }
+        res.render('post', {
+          ...post,
+          comments,
+          logged_in: req.session.logged_in,
+          postUser
+        });
+      
     } catch (err) {
+      console.log(err)
+    res.status(500).json(err);
+  }
+});
+
+// render post edit page
+router.get('/post/edit/:id', withAuth, async (req, res) => {
+  try {
+      const postData = await Post.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
+      });
+      const post = postData.get({ plain: true });
+      if(post.user_id === req.session.user_id){
+        res.render('edit', {
+          ...post,
+          logged_in: req.session.logged_in
+        });
+      }else{
+        res.redirect('/dashboard');
+      }      
+    } catch (err) {
+      console.log(err)
     res.status(500).json(err);
   }
 });
